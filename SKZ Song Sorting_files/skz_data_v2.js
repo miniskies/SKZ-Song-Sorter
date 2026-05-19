@@ -2,8 +2,8 @@
 // 2009/1/27 Modified by K-Factory@migiwa
 
 // *****************************************************************************
-str_CenterT = 'Tie!';
-str_CenterB = 'Undo last choice';
+str_CenterT = 'Tie';
+str_CenterB = 'Undo';
 
 str_ImgPath = 'http://i.imgur.com/';
 // 0:順番に　1:昔の
