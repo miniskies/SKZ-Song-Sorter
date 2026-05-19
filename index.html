@@ -6,9 +6,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css">
   <meta http-equiv="pragma" content="no-cache">
   <meta http-equiv="Cache-Control" content="no-cache">
-  <link rel="shortcut icon" href="http://tohosort.comoj.com/yinyang.ico" type="image/x-icon">
-  <link rel="icon" href="http://tohosort.comoj.com/yinyang.ico" type="image/x-icon">
-  <meta name="author" content="haru">
+  <meta name="author" content="hina">
   <meta name="description" content="SKZ Song Sorting">
   <meta name="keywords" content="">
   <meta name="generator" content="notepad"><title>Stray Kids Song Sorting</title>  
@@ -20,38 +18,198 @@
   <link rel="stylesheet" type="text/css" href="SKZ%20Song%20Sorting_files/tcs_style.css">
   <style type="text/css">
 <!--
-.style4 {
-	font-family: Arial, Helvetica, sans-serif;
-	color: #000000;
-	font-weight: normal;
-	font-size: 11px;
+body {
+    background: url(https://i.bandori.party/static/img/bg_pattern.png?36-12-6);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666;
 }
-a:link {
-	color: #990000;
-	text-decoration: none;
+#mainTable {
+   font-size: 16px;
+   font-family: 'Arial', sans-serif;
+   text-align: center;
+   vertical-align: middle; 
+   width: 410px;
+   margin-left: auto;
+   margin-right: auto;
+   border-collapse: separate;
+   border-spacing: 10px 5px;
+   
+}
+
+.tb_header {
+    padding-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#fldLeft    {
+    height: 50px;
+	text-align: center; 
+	min-width: 150px;
+	border: 0px solid #fff;
+	cursor:pointer;
+    padding: 0px;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 11px;
+}
+#fldRight   {
+    height: 50px;
+	text-align: center;
+    padding:0px;
+	min-width: 150px;
+	border: 0px solid #fff;
+	cursor:pointer;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#fldMiddleT {
+	text-align: center;
+	min-width: 50px;
+	height: 73px;
+	color: #fff;
+	border: 0px solid #fff;
+	border-radius: 10px;
+	cursor:pointer;
+	background:#E50050;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#fldMiddleB {
+	text-align: center;
+	min-width: 50px;
+	height: 74px;
+	color: #fff;
+	border: 0px solid #fff;
+	border-radius: 10px;
+	cursor:pointer;
+	background:#E50050;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.cbox {
+	cursor:pointer;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+.cbox.bold {
+	font-weight: bold;
+}
+
+/* Results */
+div.result.box {
+	text-align: center;
+	margin: 10px auto;
+	padding: 10px;
+	display: block;
+	border-radius: 20px;
+}
+
+/* Winners */
+.idol {
+	position: relative;
+	margin: 10px 6px;
+    width: 150px;
+	padding:30px;
+}
+div.idol {
+	display: inline-block;
+}
+.idol .number {
+	position: absolute;
+	text-align: center;
+	margin: 0px -50px 50px -55px;
+	display: inline-block;
+	width: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 25px;
+	color: #fff;
+	background: #E50050; 
+}
+.idol img {
+    width: 150px;
+    border-radius: 10px;
+}
+.idol .name {
+	height: 40px;
+	position: absolute;
+	bottom: 15px;
+	width: 260px;
+	margin: -35px -58px;
+	border-radius: 10px;
+	color: #666;
+}
+.idol .name span {
+	font-size: 12pt;
+}
+
+/* Runner Ups */
+.card {
+	text-align: left;
+	width: 250px;
+	margin: 10px 5px;
+	padding: 5px;
+	display: inline-block;
+	color: #666;
+}
+
+.card .number {
+	color: #FFF;
+	border-radius: 20px;
+	width: 40px;
+	height: 20px;
+	margin: -10px 5px -20px 25px;
+	padding: 10px 0px;
+	text-align: center;
+	line-height: 20px;
+	font-size: 24px;
+	display: inline-block;
+	background: #F2B141;
+}
+
+.card span {
+	font-size: 13pt;
+}
+
+#resultField {
+	color: #666;
+    font-family: 'Arial', sans-serif;
+	font-size: 13px;
+}
+
+a       {
+	text-decoration:none;
+    font-family: 'Arial', sans-serif;
+}
+a:hover {
+	color:#cc134c;
+    font-family: 'Arial', sans-serif;
+}
+
+a:link {
+	color: #E50050;
+	text-decoration: none;
+    font-family: 'Arial', sans-serif;
+	font-size: 13px;
 }
 a {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 11px;
+    font-family: 'Arial', sans-serif;
+	font-size: 13px;
 }
 a:visited {
 	text-decoration: none;
-	color: #6600FF;
-	font-size: 11px;
-	font-family: Arial, Helvetica, sans-serif;
+	color: #E50050;
+	font-size: 13px;
+    font-family: 'Arial', sans-serif;
 }
 a:hover {
 	text-decoration: none;
-	color: #FF6600;
-	font-size: 11px;
-	font-family: Arial, Helvetica, sans-serif;
+	color: #cc134c;
+	font-size: 13px;
+    font-family: 'Arial', sans-serif;
 }
 a:active {
 	text-decoration: none;
-	font-size: 11px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+    font-family: 'Arial', sans-serif;
 }
 -->
   </style>
@@ -60,7 +218,7 @@ a:active {
    <table id="mainTable">
     <thead>
      <tr>
-      <td colspan="3" class="tb_header">Battle No. <span id="lblCount">-</span><br>
+      <td colspan="3" class="tb_header">Round No. <span id="lblCount">-</span><br>
        <span id="lblProgress">0</span>% sorted.<br>
        <div align="center"><span id="GaGprog"></span></div>
       </td>
@@ -84,7 +242,6 @@ a:active {
       <td colspan="3"><div align="center">
         <input id="optImage" checked="checked" type="checkbox">
         <span class="tb_header">Display images while sorting.
-          
         </span></div></td>
      </tr>
     </tfoot>
@@ -93,14 +250,11 @@ a:active {
   <br>
    <table id="optTable" align="center" width="450"></table>
   <br>
-  <div id="ranTable" width="640px" class="tb" style="display:none;" align="center">
-<div>
   <div class="style4" id="resultField" style="text-align:center;">
-    <p class="style7">Sorter for Stray Kids Songs. Pick your sources, and hit the Start button.</p>
-<br>
-Adapted from <a href="http://kouhi.me/idol/">kouhi.me/idol</a>. Scripts by <a href="http://kouga.net/">migiwa from K-Factory</a>.<br><br>
-<br>
-  </div>
+  	<p>If you run into any trouble, contact me on <a href="https://twitter.com/miniskies_">twitter</a>!<br><br>
+	Adapted from <a href="http://kouhi.me/idol/">kouhi.me/idol</a>. Scripts by <a href="http://kouga.net/">migiwa from K-Factory</a>.<br><br>
+</p>
+  </div><iframe scrolling="no" width="1" height="1" frameborder="0" style="background-color:transparent; overflow:hidden; position:absolute; top:0; left:0; z-index:9999;" id="ga_target"></iframe><script type="text/javascript">
 
 
 
