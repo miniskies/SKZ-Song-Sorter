@@ -225,15 +225,23 @@ a:active {
     </thead>
     <tbody>
      <tr>
-      <td id="fldLeft" onclick="fnc_Sort(-1);" rowspan="2"><img src="https://static.wikia.nocookie.net/stray-kids/images/a/a9/Nachimbong_Icon.png/revision/latest/scale-to-width-down/50?cb=20251106030825"></td>
+      <td id="fldLeft" onclick="fnc_Sort(-1);" rowspan="2"></td>
 	  <td style="border: 0px; width: 7px;" rowspan="2"></td>
       <td id="fldMiddleT" onclick="fnc_Sort(0);">SKZ Song Sorter</td>
 	  <td style="border: 0px; width: 7px;" rowspan="2"></td>
-      <td id="fldRight" onclick="fnc_Sort(1);" rowspan="2"><img src="https://static.wikia.nocookie.net/stray-kids/images/a/a9/Nachimbong_Icon.png/revision/latest/scale-to-width-down/50?cb=20251106030825"></td>
+      <td id="fldRight" onclick="fnc_Sort(1);" rowspan="2"></td>
      </tr>
      <tr>
       <td id="fldMiddleB" onclick="fnc_Undo();">Click to start!</td>
      </tr>
+		<tfoot>
+     <tr>
+      <td colspan="3"><div align="center">
+        <input id="optImage" checked="checked" type="checkbox">
+        <span class="tb_header">Display images while sorting.
+        </span></div></td>
+     </tr>
+    </tfoot>
     </tbody>
    </table>
   </div>
