@@ -84,7 +84,6 @@ body {
 
 .cbox {
 	cursor:pointer;
-	font-family: "Montserrat", "Yu Mincho", sans-serif !important;
 	font-size: 13px;
 	margin: 5px;
 }
@@ -179,13 +178,101 @@ div.idol {
 .card span {
 	font-size: 13pt;
 }
-
-#resultField {
-	color: #666;
-    font-family: 'Arial', sans-serif;
-	font-size: 13px;
+/*------- Box 1 (Sorter Itself) --------*/
+.box1 {
+	text-align: center;
+	width: 700px;
+	margin: 10px auto;
+	padding: 10px;
+	display: block;
+	background: #2cd0ff;
+	color: #fff;
+	border-radius: 0 2.5em 0 0;
 }
 
+.box1-contents {
+    margin: 80px 0 15px 0;
+    background-color:;
+}
+
+.box1-img {
+	text-align: center;
+	margin: 10px auto;
+	padding: 10px;
+	display: block;
+	border-radius: 0 2.5em 0 0;
+}
+
+/*------- Box 2 (Category/Results) --------*/
+.box2 {
+	display: inline-block;
+    margin-bottom:20px;
+    width:700px;
+    /* background image
+    background-image: url(https://33550336.neocities.org/srsorter/boxbox.png);*/
+    background-repeat: no-repeat;
+    background-size: 100% 140%;
+    position: relative;
+}
+
+.box2-contents {
+    padding: 1em 4.1em;
+    background-color: #fff;
+    border: 5px solid #2cd0ff;
+    width: 100%;
+}
+
+/*------- Other CSS --------*/
+.boxheader {
+	border-radius: 5px 5px 0 0;
+	background-color:#2cd0ff;
+	padding:17px 0;
+	text-align: center;
+	color: #fff;
+	font-weight: 800;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.imgheader {
+    width: 98%;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 4px;
+    box-shadow: 2px 2px 0em 1px #2cd0ff;
+    margin-bottom: 5px;
+}
+
+.imgdivider {
+    height: 36px;
+    max-height: 36px;
+}
+
+.txtheader {
+    display: table;
+    margin: 0 auto;
+    padding: 1em 0 7px 0;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.headerunderline {
+    /* content: ""; */
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #4aecff, #effe0f);
+    /* position: absolute; */
+    /* left: 0; */
+    /* bottom: -1px; */
+}
+
+.txtext {
+    margin: 0 0 15px 0;
+}
+ /*------- Other CSS - Underline --------*/
 a       {
 	text-decoration:none;
     font-family: 'Arial', sans-serif;
