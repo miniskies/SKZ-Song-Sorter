@@ -17,167 +17,315 @@
   <script type="text/javascript" src="SKZ%20Song%20Sorting_files/op.js"></script>
   <link rel="stylesheet" type="text/css" href="SKZ%20Song%20Sorting_files/tcs_style.css">
   <style type="text/css">
-<!--
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #666;
+/*------- CSS Start --------*/
+
+/*------- Other CSS - Cursor 
+   * {
+    cursor:url("https://33550336.neocities.org/hsrsorter/cursor.png"), auto!important;
 }
+
+--------*/
+
+/*------- Other CSS - Scrollbar --------*/
+::-webkit-scrollbar {
+    width:var(--scrollbar-padding);
+    height:var(--scrollbar-padding);
+    background-color:transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color:#00d2ff;
+    border:calc((var(--scrollbar-padding) - 2px) / 2) solid transparent;
+    border-top:calc(var(--scrollbar-padding) / 2.69) solid transparent;
+    border-bottom:calc(var(--scrollbar-padding) / 2.69) solid transparent;
+    background-clip:padding-box;
+}
+
+::-webkit-scrollbar-corner {
+    background:transparent;
+}
+
+:root {
+    --scrollbar-padding:13px;
+}
+
+/*------- Other CSS - Custom Fonts (requires dropbox in .ttf format)
+@font-face { 
+    font-family: "genshin"; 
+    src: url('https://dl.dropboxusercontent.com/s/z6clmkuft654fbh/genshin.ttf');
+}
+--------*/
+
+/*------- General Site Layout --------*/
+body {
+    /* background image */
+	background-color:#fff;
+	background: url(https://33550336.neocities.org/i7sorter/bg.png);
+    background-attachment: fixed;
+    /*
+    for full screen bg 
+        background-repeat: no-repeat;
+        background-position: 100% 100%, center;
+        background-size: cover; 
+    */
+	/* font */
+	font-family: "Barlow", "Montserrat", sans-serif;
+    font-weight: 600;
+    color: #3c3c3c;
+    position: relative;
+    padding: 0 0.2rem;
+    text-align: center;
+    margin-top: 0.18rem;
+    font-size: 18px;
+    line-height:21px;
+}
+
+/*------- Sorter Progress / Title --------*/
+/*--
+.tb_header {
+	font-family: "Montserrat", "Yu Mincho", sans-serif !important;
+}
+--*/
+
+/*------- Sorter Table --------*/
 #mainTable {
-   font-size: 16px;
-   font-family: 'Arial', sans-serif;
    text-align: center;
-   vertical-align: middle; 
-   width: 410px;
+   vertical-align: middle;
+   width: 520px;
+   /* height: 300px; */
    margin-left: auto;
    margin-right: auto;
    border-collapse: separate;
-   border-spacing: 10px 5px;
-   
+   border-spacing: 10px 5px; 
 }
 
-.tb_header {
-    padding-bottom: 10px;
-    font-family: "Montserrat", "Yu Mincho", sans-serif !important;
-}
-
+/*------- Left Option --------*/
 #fldLeft    {
-    height: 50px;
+    /* 
+    height: 220px;
+	padding:5px;
+	min-width: 220px;
+	*/
 	text-align: center; 
-	min-width: 150px;
-	border: 0px solid #fff;
 	cursor:pointer;
-    padding: 0px;
-	font-family: Arial, Helvetica, sans-serif;
+    color:#fff;
 }
+
+/*------- Right Option --------*/
 #fldRight   {
-    height: 50px;
-	text-align: center;
-    padding:0px;
-	min-width: 150px;
-	border: 0px solid #fff;
+    /* 
+    height: 220px;
+	padding:5px;
+	min-width: 220px;
+	*/
+	text-align: center; 
 	cursor:pointer;
-	font-family: Arial, Helvetica, sans-serif;
+    color:#fff;
 }
+
+/*------- Middle Option (Top, Instruction/Tie) --------*/
+
 #fldMiddleT {
 	text-align: center;
-	min-width: 65px;
-	height: 73px;
-	color: #fff;
-	border: 0px solid #fff;
-	border-radius: 10px;
+	width: 170px;
+	/*height: 90px;*/
+	border: 2px solid #2cd0ff;
+    background: #2cd0ff;
+    color: #fff;
+	border-radius: 5px;
 	cursor:pointer;
-	background:#DB5A6A;
-	font-family: Arial, Helvetica, sans-serif;
 }
+
+#fldMiddleT div.button.top {
+	text-align: center;
+	width: 100%;
+	height: 20px;
+}
+
+#divMiddleT {
+    display: table-cell;
+    text-align: center;
+    width: 170px;
+    /*line-height: 20px;*/
+    margin: 40px auto;
+    /*padding: 45px 0px;*/
+    cursor: pointer;
+	/*border: 1px solid #b1a375;*/
+}
+
+/*------- Middle Option (Bottom, Start/Undo) --------*/
 #fldMiddleB {
 	text-align: center;
-	min-width: 65px;
-	height: 74px;
-	color: #fff;
-	border: 0px solid #fff;
-	border-radius: 10px;
+	min-width: 170px;
+	/*height: 90px;*/
+	padding:0px;
+    background: #2cd0ff;
+    color: #fff;
+	border-radius: 5px;
 	cursor:pointer;
-	background:#DB5A6A;
-	font-family: Arial, Helvetica, sans-serif;
 }
 
+#fldMiddleB {
+	text-align: center;
+	/*height: 50px;*/
+	padding: 0px;
+	/*font-family: "Montserrat", "Yu Mincho", sans-serif !important;*/
+}
 
+#divMiddleB {
+    display: table-cell;
+    text-align: center;
+    width: 170px;
+    /*line-height: 20px;*/
+    margin: 0px auto;
+    /*padding: 15px 0px; */
+    cursor: pointer;
+    /*border: 1px solid #b1a375;*/
+
+}
+
+/*------- Middle Option --------*/
+#divMiddleT.disabled, #divMiddleB.disabled {
+    color: #d1cacb;
+}
+
+/*------- Sorter Category --------*/
 .cbox {
 	cursor:pointer;
+	/*font-family: "Montserrat", "Yu Mincho", sans-serif !important;*/
 	font-size: 13px;
-	margin: 5px;
+    margin: 7px;
 }
-	  
+
 .check {
    	cursor:pointer;
     transform:scale(1.5);
-	margin: 5px;}
+	margin: 7px;}
 
 .selectall {
     cursor:pointer;
     transform:scale(1.5);
-	margin: 5px;    
+	margin: 7px;    
 }
 .cbox.bold {
 	font-weight: bold;
 }
 
-/* Results */
+/*------- Results --------*/
 div.result.box {
 	text-align: center;
 	margin: 10px auto;
 	padding: 10px;
 	display: block;
-	border-radius: 20px;
 }
 
-/* Winners */
-.idol {
-	position: relative;
-	margin: 10px 6px;
-    width: 150px;
-	padding:30px;
-}
-div.idol {
-	display: inline-block;
-}
-.idol .number {
-	position: absolute;
-	text-align: center;
-	margin: 0px -50px 50px -55px;
-	display: inline-block;
-	width: 50px;
-	line-height: 50px;
-	font-size: 20px;
-	font-weight: bold;
-	border-radius: 25px;
-	color: #fff;
-	background: #DB5A6A; 
-}
-.idol img {
-    width: 150px;
-    border-radius: 10px;
-}
-.idol .name {
-	height: 40px;
-	position: absolute;
-	bottom: 15px;
-	width: 260px;
-	margin: -35px -58px;
-	border-radius: 10px;
-	color: #666;
-}
-.idol .name span {
-	font-size: 12pt;
+/*------- The Sorter Itself (before starting) --------*/
+.charasort {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /*----
+    background-image: url(https://33550336.neocities.org/gisorter/chara-bg.png); 
+    ----*/
+    position: relative;
+    margin: 10px 6px;
+    /*---
+    padding: 20px 20px 70px 20px;
+    ---*/
 }
 
-/* Runner Ups */
+/*------- The Sorter Itself --------*/
+.chara {
+	/*----
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url(https://33550336.neocities.org/gisorter/chara-bg.png); 
+    ----*/
+    position: relative;
+    margin: 10px 6px;
+    padding: 20px 20px 50px 20px;
+    /*----
+    margin: 10px 6px;
+    padding: 29px 20px 94px 20px;
+    ----*/
+}
+
+div.chara {
+	display: inline-block;
+}
+
+.chara .number {
+    position: absolute;
+    text-align: center;
+    margin: -1px 0px 0px -1px;
+    display: inline-block;
+    padding: 4px 7px;
+    /* line-height: 30px; */
+    /* border-radius: 25px; */
+    border-radius: 0.5em 0;
+    color: #ffffff;
+    background: #2cd0ff;
+    border: solid 2px #ffffff;
+    box-shadow: 2px 2px 0em 1px #2cd0ff;
+}
+
+.charasort .name {
+	color: #ffffff;
+    /* font-size: 15pt; */
+    margin-top: -20px;
+    /* letter-spacing: .5px; */
+    background-color: #2cd0ff;
+    border: 2px solid #ffffff;
+    border-radius: 0.5em 0;
+    padding: 5px 0;
+    box-shadow: 2px 2px 0em 1px #2cd0ff;
+}
+
+.chara .name {
+    /* height: 40px; */
+    position: absolute;
+    /* bottom: 27px; */
+    width: 84%;
+    padding: 5px 0;
+    /* margin: 0px 2px 5px 20px; */
+    /* border-radius: 7px; */
+    /* display: flex; */
+    color: #ffffff;
+    /* font-size: 15pt; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    background-color: #2cd0ff;
+    border: 2px solid #ffffff;
+    border-radius: 0.5em 0;
+    box-shadow: 2px 2px 0em 1px #2cd0ff;
+}
+
+/*------- i have no idea, i think its old code --------*/
 .card {
-	text-align: left;
-	width: 250px;
-	margin: 10px 5px;
-	padding: 5px;
-	display: inline-block;
-	color: #666;
+    text-align: left;
+    border: 1px solid #444466;
+    height: 100px;
+    margin: 10px 5px;
+    padding: 20px 40px;
+    display: inline-block;
 }
 
 .card .number {
-	color: #FFF;
-	border-radius: 20px;
-	width: 40px;
-	height: 20px;
-	margin: -10px 5px -20px 25px;
+	color: #444466;
+	border-radius: 5px;
+	height: 30px;
+	padding: 0px 5px;
+	margin: -10px 5px -20px -5px;
 	padding: 10px 0px;
 	text-align: center;
 	line-height: 20px;
 	font-size: 24px;
 	display: inline-block;
-	background: #F2B141;
 }
 
 .card span {
-	font-size: 13pt;
+	font-size: 12pt;
 }
+
 /*------- Box 1 (Sorter Itself) --------*/
 .box1 {
 	text-align: center;
@@ -203,6 +351,7 @@ div.idol {
 	border-radius: 0 2.5em 0 0;
 }
 
+
 /*------- Box 2 (Category/Results) --------*/
 .box2 {
 	display: inline-block;
@@ -220,6 +369,29 @@ div.idol {
     background-color: #fff;
     border: 5px solid #2cd0ff;
     width: 100%;
+}
+
+/*------- Box 3 (Instructions) --------*/
+.box3 {
+    display: inline-block;
+    margin-bottom:20px;
+    width:700px;
+    height:650px;
+    /* background image 
+    background-image: url(https://33550336.neocities.org/srsorter/box.png);*/
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.box3-contents {
+    height:577px;
+    margin:0 0 1em 0;
+    overflow-y:auto;
+    padding:1em 1em;
+    background-color:#fff;
+    text-align:center;
+    border:5px solid #2cd0ff;
 }
 
 /*------- Other CSS --------*/
@@ -272,44 +444,47 @@ div.idol {
 .txtext {
     margin: 0 0 15px 0;
 }
- /*------- Other CSS - Underline --------*/
-a       {
-	text-decoration:none;
-    font-family: 'Arial', sans-serif;
-}
-a:hover {
-	color:#cc134c;
-    font-family: 'Arial', sans-serif;
+
+/*------- Other CSS - Underline --------*/
+
+u {
+    text-decoration: none;
+    box-shadow: inset 0 -0.25em 0 0 #00d2ff;
 }
 
+/*------- Other CSS - Links --------*/
+
 a:link {
-	color: #E50050;
-	text-decoration: none;
-    font-family: 'Arial', sans-serif;
-	font-size: 13px;
+	color: #00d2ff;
 }
-a {
-    font-family: 'Arial', sans-serif;
-	font-size: 13px;
-}
+
 a:visited {
 	text-decoration: none;
-	color: #E50050;
-	font-size: 13px;
-    font-family: 'Arial', sans-serif;
+	color: #00d2ff;
 }
+
 a:hover {
 	text-decoration: none;
-	color: #cc134c;
-	font-size: 13px;
-    font-family: 'Arial', sans-serif;
+	color: #00d2ff;
 }
+
 a:active {
 	text-decoration: none;
-	font-size: 13px;
-    font-family: 'Arial', sans-serif;
 }
--->
+
+/*------- Other CSS - Text Highlight --------*/
+::selection {
+    background:#00d2ff;
+    color:#fff;
+}
+ 
+img::selection {background:transparent;}
+img::-moz-selection {background:transparent;}
+ 
+::-moz-selection {
+    background:#00d2ff;
+    color:#fff;
+}
   </style>
   </head><body onload="startup()">
   <div align="center">
